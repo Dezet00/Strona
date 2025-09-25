@@ -1,0 +1,327 @@
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+  }
+/* --- NAVBAR --- */
+.rolka {
+  background: rgba(255, 111, 163, 0); 
+  transition: box-shadow 0.3s ease;   
+  box-shadow: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.rolka-kontener {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 25px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rolka-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: default;
+}
+
+.nav-logo-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+.rolka-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+.rolka-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+.rolka-menu li a::after {
+  content: "❤";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  font-size: 0.9rem;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+.rolka-menu li a:hover {
+  color: #ffe6f0;
+}
+.rolka-menu li a:hover::after {
+  transform: translateX(-50%) scale(1);
+}
+.rolka-przycisk {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.rolka-przycisk span {
+   height: 2.5px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.rolka-przycisk.aktywny span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+.rolka-przycisk.aktywny span:nth-child(2) {
+  opacity: 0;
+}
+.rolka-przycisk.aktywny span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+@media (max-width: 768px) {
+  .rolka-przycisk {
+    display: flex;
+    width: 26px;
+    height: 22px;
+  }
+
+  .rolka-przycisk span {
+    height: 2px;
+  }
+
+  .rolka-menu {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #ff6fa3, #ff3366);
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 30px 0;
+    display: none;
+  }
+
+  .rolka-menu.aktywny {
+    display: flex;
+  }
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background: linear-gradient(135deg, #ff6fa3, #ff3366);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 51, 102, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  line-height: 40px;
+  text-align: center;
+}
+
+#scrollTopBtn:hover {
+  background: linear-gradient(135deg, #ff3366, #ff6fa3);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(255, 51, 102, 0.5);
+}
+
+.hero-outer {
+  width: 100%;                 
+  max-width: 1680px;           
+  border-radius: 15px;
+  margin: 0 auto;             
+  margin-top: 50px;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('bck2.png');
+  background-size: cover;     
+  background-position: center; 
+  background-repeat: no-repeat;
+  position: relative;  
+}
+.hero-outer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  border-radius: 15px;
+}
+
+.hero-inner {
+  z-index: 2;                 
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 20px;
+}
+
+.hero-inner h1 {
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 800; 
+  font-size: 3.5rem;
+  user-select: none;
+  letter-spacing: 1px;
+}
+
+.hero-inner p {
+  font-weight: 600;
+  color: white; 
+  font-size: 1.5rem;
+  margin-bottom: 20px; 
+  user-select: none;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+a.btn-primary, a.btn-secondary {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 45px;
+  font-size: 22px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+a.btn-primary {
+  background: linear-gradient(135deg, #ff4da6, #ff1a8c);
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 77, 166, 0.5);
+}
+a.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 77, 166, 0.6);
+}
+a.btn-secondary {
+  background: linear-gradient(135deg, #ff99c2, #ff66aa);
+  color: white;
+  box-shadow: 0 6px 15px rgba(255, 153, 194, 0.5);
+}
+a.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 153, 194, 0.6);
+}
+.top-bar-container {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom:  -20px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 100%;
+  padding: 10px 0;
+  flex-wrap: nowrap; 
+}
+.bar-btn {
+  position: relative;
+  padding: 10px 18px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d63384;
+  border-radius: 50px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; 
+}
+.bar-btn:not(.info-btn)::after {
+  content: "❤";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  font-size: 0.9rem;
+  color: #d63384;
+  transition: transform 0.3s ease;
+}
+.bar-btn:not(.info-btn):hover::after {
+  transform: translateX(-50%) scale(1);
+}
+.bar-btn:not(.info-btn):hover {
+  transform: scale(1.05);
+}
+.info-btn {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(245, 200, 210, 0.4);
+  cursor: default;
+}
+@media (max-width: 768px) {
+  .hero-outer {
+    height: 100vh;
+    padding-top: 100px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 0px;
+    border-radius: 0px;
+  }
+  .hero-outer::before{
+    border-radius: 0px;
+  }
+  .hero-inner h1{
+    font-size: 2.5rem;
+  }
+  .hero-inner p {
+    font-size: 1.2rem;
+  }
+    .top-bar-container {
+    gap: 2px; 
+    justify-content: center;
+  }
+  .bar-btn {
+    flex: 1 1 auto; 
+    min-width: 60px; 
+    max-width: 120px; 
+    font-size: 0.9rem; 
+  }
+  .info-btn {
+    display: none; 
+  }
+  .rolka-logo { font-size: 1.4rem; }
+  .nav-logo-img { width: 30px; height: 30px; }
+}
