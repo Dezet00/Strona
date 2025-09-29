@@ -70,6 +70,20 @@ body {
   transition: color 0.3s ease, transform 0.2s ease;
   white-space: nowrap; 
 }
+.bar-btn {
+  position: relative;
+  padding: 10px 18px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d63384;
+  border-radius: 50px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; 
+}
 .bar-btn:not(.info-btn)::after {
   content: "❤";
   position: absolute;
@@ -85,6 +99,22 @@ body {
 }
 .bar-btn:not(.info-btn):hover {
   transform: scale(1.05);
+}
+.top-bar-container .bar-btn::after {
+  content: none !important;
+}
+.top-bar-container .bar-btn {
+  position: relative;
+}
+.top-bar-container .bar-btn:nth-child(2)::after {
+  content: "❤" !important;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  font-size: 0.95rem;
+  color: #d63384;
+  opacity: 1 !important;
 }
 .info-btn {
   background-color: #fff;
@@ -278,7 +308,7 @@ font-family: 'Poppins', sans-serif;
   border-radius: 30px;
   box-shadow: 0 8px 20px rgba(200, 150, 170, 0.25); 
   margin: 60px auto;
-  max-width: 1700px;
+  max-width: 1600px;
   width: 98%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
@@ -337,6 +367,9 @@ h1, h2 {
   transform: scale(1.03);
 }
 @media (max-width: 768px) {
+  .Cont {
+    border-radius: 0px;
+  }
   .center-section.two-columns .text-side p{
     font-size: 1rem;
   }

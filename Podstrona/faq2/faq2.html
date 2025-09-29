@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyTyJaNikola</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="Hero.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <nav class="rolka">
+  <div class="rolka-kontener">
+    <a class="rolka-logo">
+      <img src="logo1.png" alt="Logo strony" class="nav-logo-img">
+      ♥ Damian & Nikola ♥
+    </a>
+    <button class="rolka-przycisk" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="rolka-menu">
+      <li><a href="../../index.html">Strona Główna</a></li>
+      <li><a href="../St2/strona2.html">Historia</a></li>
+      <li><a href="../Galeria/galeria.html">Galeria</a></li>
+      <li><a href="faq2.html">Faq</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="container">
+    <h2>Wpisz hasło:</h2>
+    <input type="password" id="password" placeholder="Hasło">
+    <div class="btn" onclick="checkPassword()">Dalej</div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+
+      if (password === "4KochamCie") {
+        window.location.href = "success.html"; // przekierowanie
+      } else {
+        alert("❌ Błędne hasło! Spróbuj ponownie.");
+      }
+    }
+    const navbar = document.querySelector('.rolka');
+const maxScroll = window.innerHeight * 0.6;
+
+window.addEventListener('scroll', () => {
+  let scrollY = window.scrollY;
+  let opacity = Math.min(scrollY / maxScroll, 1);
+
+  navbar.style.background = `rgba(255, 111, 163, ${opacity})`;
+
+  if (opacity > 0) {
+    navbar.style.boxShadow = `0 4px 15px rgba(0,0,0,${0.15 * opacity})`;
+  } else {
+    navbar.style.boxShadow = 'none';
+  }
+});
+
+// hamburger menu
+const przycisk = document.querySelector('.rolka-przycisk');
+const menu = document.querySelector('.rolka-menu');
+
+przycisk.addEventListener('click', () => {
+  przycisk.classList.toggle('aktywny');
+  menu.classList.toggle('aktywny');
+});
+  </script>
+</body>

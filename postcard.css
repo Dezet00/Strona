@@ -89,7 +89,7 @@ header {
 
 .gallery-images img {
   position: absolute;
-  width: 160px;  /* stałe wymiary zdjęć */
+  width: 160px;  
   height: 280px;
   object-fit: cover;
   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
@@ -230,8 +230,8 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
-  flex-wrap: wrap; /* pozwala zawijać kontenery na małych ekranach */
-  flex-direction: row; /* konieczne, żeby były obok siebie na desktop */
+  flex-wrap: wrap; 
+  flex-direction: row; /
 }
 
 .newsletter-left {
@@ -267,7 +267,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  margin-top: 0; /* usuń dla desktop */
+  margin-top: 0; 
 }
 
 .newsletter-right a {
@@ -281,7 +281,6 @@ header {
   color: #fff;
 }
 
-/* Media query dla mobile */
 @media (max-width: 768px) {
   .newsletter-container {
     flex-direction: column;
@@ -290,7 +289,7 @@ header {
   }
 
   .newsletter-right {
-    margin-top: 10px; /* dopiero na mobile */
+    margin-top: 10px; 
   }
 }
 .center-section h2 {
@@ -327,13 +326,13 @@ header {
     .center-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;       /* zmniejszamy gap na mobile */
-    padding: 0 10px; /* lekki padding od boków */
+    gap: 20px;      
+    padding: 0 10px; 
   }
   .center-section .text-side p {
-    padding: 0;       /* usuwa wszystkie paddingi */
+    padding: 0;       
     font-size: 1rem;
-    margin: 0 0 15px 0; /* ewentualnie zostaw mały margines dolny dla odstępu między paragrafami */
+    margin: 0 0 15px 0; 
     box-sizing: border-box;
   }
     .center-section.two-columns {
@@ -376,25 +375,21 @@ header {
   margin: 60px auto;
   padding: 0 0px;
 }
-
 .end-text-outer {
-  max-width: 900px;       /* ograniczenie szerokości */
-  margin: 20px 0;         /* trochę od góry i dołu */       
+  max-width: 900px;       
+  margin: 20px 0;           
   text-align: left
 }
-
 .end-text-section {
-  display: block;         /* wyłącza flex */
-  text-align: left;       /* tekst od lewej */
+  display: block;         
+  text-align: left;       
 }
-
 .end-text-section .text-container {
   max-width: 100%;
   text-align: left;
   margin: 0;
   padding: 0;
 }
-
 .end-text-outer h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 2.2em;
@@ -406,8 +401,6 @@ header {
 .end-text-outer h2:hover {
   transform: scale(1.03);
 }
-
-/* h3 */
 .end-text-outer h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -419,8 +412,6 @@ header {
 .end-text-outer h3:hover {
   transform: scale(1.02);
 }
-
-/* p */
 .end-text-outer p {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -449,16 +440,13 @@ header {
 .gallery-text h2:hover,
 .gallery-text h3:hover,
 .gallery-text p:hover {
-  transform: scale(1.03); /* lekkie powiększenie */
+  transform: scale(1.03); 
 }
-
-/* --- Hover dla tekstu w sekcji slajdu --- */
 .center-section .text-side h2,
 .center-section .text-side h3,
 .center-section .text-side p {
   transition: transform 0.3s ease;
 }
-
 .center-section .text-side h2:hover,
 .center-section .text-side h3:hover,
 .center-section .text-side p:hover {
@@ -473,7 +461,7 @@ header {
 
   .center-section .slideshow-side {
     width: 100%;
-    margin-bottom: 10px; /* zmniejszony odstęp pod slajdem */
+    margin-bottom: 10px; 
   }
 
   .center-section .text-side {

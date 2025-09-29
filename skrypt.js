@@ -51,7 +51,9 @@
   }, 3000);
 
 
-const sections = document.querySelectorAll('.intro-section, .image-text-container, .gallery, .center-section');
+const sections = document.querySelectorAll(
+  '.intro-section, .image-text-container, .gallery, .center-section, .section-container-full, .image-gallery-section, .end-text-outer'
+);
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
