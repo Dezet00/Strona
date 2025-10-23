@@ -1,0 +1,365 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #111, #000);
+  color: #fff;
+  min-height: 100vh; /* pozwala stronie się przewijać */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* 🚫 blokuje przewijanie poziome */
+}
+
+
+/* --- NAVBAR --- */
+.rolka {
+  background: rgba(255, 111, 163, 0); 
+  transition: box-shadow 0.3s ease;   
+  box-shadow: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.rolka-kontener {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 15px 25px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rolka-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: default;
+}
+
+.nav-logo-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+.rolka-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+.rolka-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+.rolka-menu li a::after {
+  content: "❤";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  font-size: 0.9rem;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+.rolka-menu li a:hover {
+  color: #ffe6f0;
+}
+.rolka-menu li a:hover::after {
+  transform: translateX(-50%) scale(1);
+}
+.rolka-przycisk {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.rolka-przycisk span {
+   height: 2.5px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.rolka-przycisk.aktywny span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+.rolka-przycisk.aktywny span:nth-child(2) {
+  opacity: 0;
+}
+.rolka-przycisk.aktywny span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+@media (max-width: 768px) {
+  .rolka-przycisk {
+    display: flex;
+    width: 26px;
+    height: 22px;
+  }
+
+  .rolka-przycisk span {
+    height: 2px;
+  }
+
+  .rolka-menu {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 30px 0;
+    display: none;
+  }
+
+  .rolka-menu.aktywny {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .rolka {
+    background: rgb(255, 111, 163);
+  }
+  .rolka-menu {
+    background: rgb(255, 111, 163); /* kolor tła pod rozwiniętym menu */
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 30px 0;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .rolka-menu.aktywny {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+.final-section {
+  padding: 280px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.final-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1600px;
+  width: 100%;
+}
+.final-text {
+  flex: 1 500px;
+  text-align: left;
+}
+
+.final-text h1 {
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #8b5cf6;
+  margin-bottom: 15px;
+
+}
+
+.final-text h2 {
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: 800;
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.final-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.8;
+  max-width: 700px;
+    margin-bottom: 15px;
+}
+.final-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  display: inline-block;
+}
+
+.final-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+
+.heart-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.Serce {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+  color: #e23851;
+  text-shadow: 0 0 15px rgba(226, 56, 81, 0.4);
+  opacity: 0;
+  will-change: transform, opacity;
+  --swayX: 0px; /* zmienna kontrolująca slalom */
+  animation: heart-rise var(--dur, 3s) ease-in-out forwards,
+             heart-sway var(--dur, 4s) ease-in-out infinite alternate;
+}
+
+.Serce::before {
+  content: "❤";
+  display: block;
+}
+@keyframes heart-rise {
+  0% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--swayX)), calc(-50%)) scale(var(--scale, 1));
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--swayX)), calc(-300px)) scale(calc(var(--scale, 1.05)));
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--swayX)), calc(-300px)) scale(calc(var(--scale, 0.33))); /* ok. 80px z 150px */
+  }
+}
+
+/* subtelny slalom - zmienia tylko wartość var(--swayX) */
+@keyframes heart-sway {
+  0%   { --swayX: 10px; }
+  100% { --swayX: -10px; }
+}
+
+.final-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.final-button:hover {
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
+}
+.final-button svg {
+  width: 35px;
+  height: 35px;
+  stroke: rgb(243, 238, 255);
+}
+
+.final-button span {
+  font-family: 'Poppins', sans-serif;
+}
+/* Zmiana kolejności na telefonach 📱 */
+@media (max-width: 1024px) {
+  .final-container {
+    flex-direction: column-reverse; /* 🔁 Obrazek nad tekstem */
+    text-align: center;
+  }
+  .final-text {
+    text-align: center;
+  }
+}
+
+/* 📱 Responsywność */
+@media (max-width: 1024px) {
+  .final-container {
+    flex-direction: column; /* teraz obraz na górze, tekst pod spodem */
+    text-align: center;
+  }
+
+  .final-image {
+    order: 1; /* obrazek jako pierwszy */
+  }
+
+  .final-text {
+    order: 2; /* tekst i guzik jako drugi */
+    text-align: center;
+  }
+
+  .final-text p {
+    max-width: 90%;
+    margin: 0 auto 30px;
+  }
+
+  .final-image img {
+    max-width: 400px;
+  }
+
+  .final-text p {
+    font-size: 1rem;
+  }
+
+  .final-text h2 {
+    font-size: 2rem;
+  }
+
+  .final-text h1 {
+    font-size: 1.7rem;
+  }
+  .final-section{
+    padding: 90px 10px 40px 10px;
+  }
+}

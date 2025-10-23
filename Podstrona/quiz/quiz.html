@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pl">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MyTyJaNikola</title>
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hero.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
+ 
   <nav class="rolka">
   <div class="rolka-kontener">
     <a class="rolka-logo">
@@ -27,32 +27,22 @@
       <li><a href="../../index.html">Strona Główna</a></li>
       <li><a href="../St2/strona2.html">Historia</a></li>
       <li><a href="../Galeria/galeria.html">Galeria</a></li>
-      <li><a href="faq2.html">Faq</a></li>
+      <li><a href="../faq/faq.html">Faq</a></li>
     </ul>
   </div>
 </nav>
-  <section class="gallery-section">
-    <div class="container">
-      <div class="gallery-box">
 
-        <!-- różowe kółko w tle -->
-        <div class="circle-bg"></div>
-
-        <!-- obrazek -->
-        <img src="sticker.png"  alt="Galeria" class="gallery-img">
-
-        <!-- tekst -->
-        <div class="gallery-text">
-          <h2>Chwilowo Nieczynne</h2>
-          <p>
-           To miejsce gdzie znajdziesz nasze wyjątkowe miejsca - ze wzgledu na brak dostepnych baz danych na obecny momenty miejsce to poddane jest generalnej przebudowie.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <script src="Script.js"></script>
+ <div class="quiz-wrapper">
+    <div class="quiz-effects"></div>
+  <div class="quiz-box">
+    <h1 id="question">Ładowanie pytania...</h1>
+    <input type="text" id="answer" placeholder="Twoja odpowiedź..." autocomplete="off" />
+    <button id="checkBtn">Sprawdź</button>
+    <div class="score" id="score">Wynik: 0</div>
+  </div>
+</div>
+  <div class="info-box" id="infoBox">
+  Nie używaj dużych liter, spacji ani znaków specjalnych!
+</div>
+  <script src="script.js"></script>
 </body>
-</html>
-</html>

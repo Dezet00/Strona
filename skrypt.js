@@ -1,28 +1,20 @@
+const navbar = document.querySelector('.rolka');
+const triggerScroll = window.innerHeight * 0.6; // punkt, po którym kolor nagle się pojawia
 
-  const navbar = document.querySelector('.rolka');
-  const maxScroll = window.innerHeight * 0.6; // przewinięcie, przy którym navbar będzie w pełni widoczny
+window.addEventListener('scroll', () => {
+  if (window.scrollY > triggerScroll) {
+    navbar.classList.add('active'); // nagłe pojawienie się, ale z lekką animacją
+  } else {
+    navbar.classList.remove('active');
+  }
+});
+const przycisk = document.querySelector('.rolka-przycisk');
+const menu = document.querySelector('.rolka-menu');
 
-  window.addEventListener('scroll', () => {
-    let scrollY = window.scrollY;
-    let opacity = Math.min(scrollY / maxScroll, 1); // 0 → 1
-
-    navbar.style.background = `rgba(255, 111, 163, ${opacity})`; // płynna zmiana przezroczystości
-
-    // Płynny cień
-    if (opacity > 0) {
-      navbar.style.boxShadow = `0 4px 15px rgba(0,0,0,${0.15 * opacity})`;
-    } else {
-      navbar.style.boxShadow = 'none';
-    }
-  });
-
-  const przycisk = document.querySelector('.rolka-przycisk');
-  const menu = document.querySelector('.rolka-menu');
-
-  przycisk.addEventListener('click', () => {
-    przycisk.classList.toggle('aktywny');
-    menu.classList.toggle('aktywny');
-  });
+przycisk.addEventListener('click', () => {
+  przycisk.classList.toggle('aktywny');
+  menu.classList.toggle('aktywny');
+});
 
 
   const btn = document.querySelector('.btn');
@@ -49,28 +41,6 @@
       createHeart();
     }
   }, 3000);
-
-
-const sections = document.querySelectorAll(
-  '.intro-section, .image-text-container, .gallery, .center-section, .section-container-full, .image-gallery-section, .end-text-outer'
-);
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-sections.forEach(section => {
-  section.classList.add('fade-in-section');
-  observer.observe(section);
-});
-
-
-
 
 
 
@@ -109,3 +79,88 @@ document.querySelectorAll('.slideshow-container').forEach(container => {
   showSlide(currentSlide); // pokaż pierwszy slajd
   setInterval(nextSlide, 7000);
 });
+
+
+
+(() => {
+  const track = document.querySelector('.galery-track');
+  const fill = document.querySelector('.scrollbar-fill');
+  if (!track || !fill) return;
+
+  const container = track.closest('.galery-container') || track.parentElement;
+
+  let isDown = false;
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+
+  // === MYSZ ===
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.clientX;
+    track.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDown) return;
+    isDown = false;
+    prevTranslate = currentTranslate;
+    track.style.cursor = 'grab';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const walk = e.clientX - startX;
+    moveTrack(walk);
+    e.preventDefault();
+  });
+
+  // === DOTYK ===
+  track.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    if (!isDown) return;
+    isDown = false;
+    prevTranslate = currentTranslate;
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const walk = e.touches[0].clientX - startX;
+    moveTrack(walk);
+  }, { passive: false });
+
+  // === RUCH GALERII ===
+  function moveTrack(walk) {
+    currentTranslate = prevTranslate + walk;
+
+    const trackWidth = track.scrollWidth;
+    const containerWidth = container.offsetWidth;
+    const maxTranslate = 0;
+    const minTranslate = Math.min(containerWidth - trackWidth, 0);
+
+    if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
+    if (currentTranslate < minTranslate) currentTranslate = minTranslate;
+
+    track.style.transform = `translateX(${currentTranslate}px)`;
+    updateScrollbar();
+  }
+
+  // === AKTUALIZACJA PASKA POSTĘPU ===
+  function updateScrollbar() {
+    const trackWidth = track.scrollWidth;
+    const containerWidth = container.offsetWidth;
+    const maxScroll = trackWidth - containerWidth;
+
+    // Oblicz procent przewinięcia
+    const scrollPercent = Math.min(Math.max(-currentTranslate / maxScroll, 0), 1);
+
+    fill.style.width = `${scrollPercent * 100}%`;
+  }
+
+  // Inicjalizacja na starcie
+  updateScrollbar();
+})();
