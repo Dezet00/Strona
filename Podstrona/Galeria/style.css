@@ -277,3 +277,17 @@ html, body {
     filter: blur(70px);
   }
 }
+@media (max-width: 768px) {
+  .rolka-logo {
+        font-size: 1.4rem;
+    }
+    .nav-logo-img {
+    width: 30px;
+    height: 30px;
+    }
+  .btn,
+  .rolka-logo,
+  .rolka-menu li a{
+    font-family: 'Comic Neue', cursive, sans-serif !important;
+  }
+}

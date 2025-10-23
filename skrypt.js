@@ -17,34 +17,6 @@ przycisk.addEventListener('click', () => {
 });
 
 
-  const btn = document.querySelector('.btn');
-
-  function createHeart() {
-    const heart = document.createElement('span');
-    heart.classList.add('heart');
-    heart.textContent = '♥';
-
-    const btnRect = btn.getBoundingClientRect();
-    heart.style.left = (btnRect.left + btnRect.width / 2) + 'px';
-    heart.style.top = (btnRect.top - 10 + window.scrollY) + 'px';
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 2000);
-  }
-
-
-  setInterval(() => {
-    if (Math.random() > 0.5) {
-      createHeart();
-    }
-  }, 3000);
-
-
-
-
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {

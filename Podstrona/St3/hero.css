@@ -132,31 +132,28 @@
 
 #scrollTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+    width: 45px;
+  height: 45px;
+  font-size: 25px;
+  bottom: 30px;
+  right: 35px;
   z-index: 999;
-  background: linear-gradient(135deg, #ff6fa3, #ff3366);
+  background: linear-gradient(135deg, #dcc6ff, #be8bff);
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  border-radius: 15px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(255, 51, 102, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
   line-height: 40px;
   text-align: center;
 }
-
 #scrollTopBtn:hover {
-  background: linear-gradient(135deg, #ff3366, #ff6fa3);
+  background: linear-gradient(135deg, #f5e9ff, #c8bcff);
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(255, 51, 102, 0.5);
 }
 
 

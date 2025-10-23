@@ -1,31 +1,21 @@
+const navbar = document.querySelector('.rolka');
+const triggerScroll = window.innerHeight * 0.7; 
 
-(() => {
-  // navbar scroll
-  const navbar = document.querySelector('.rolka');
-  const maxScroll = window.innerHeight * 0.6;
+window.addEventListener('scroll', () => {
+  if (window.scrollY > triggerScroll) {
+    navbar.classList.add('active'); 
+  } else {
+    navbar.classList.remove('active');
+  }
+});
+const przycisk = document.querySelector('.rolka-przycisk');
+const menu = document.querySelector('.rolka-menu');
 
-  window.addEventListener('scroll', () => {
-    let scrollY = window.scrollY;
-    let opacity = Math.min(scrollY / maxScroll, 1);
+przycisk.addEventListener('click', () => {
+  przycisk.classList.toggle('aktywny');
+  menu.classList.toggle('aktywny');
+});
 
-    navbar.style.background = `rgba(255, 111, 163, ${opacity})`;
-
-    if (opacity > 0) {
-      navbar.style.boxShadow = `0 4px 15px rgba(0,0,0,${0.15 * opacity})`;
-    } else {
-      navbar.style.boxShadow = 'none';
-    }
-  });
-
-  // hamburger menu
-  const przycisk = document.querySelector('.rolka-przycisk');
-  const menu = document.querySelector('.rolka-menu');
-
-  przycisk.addEventListener('click', () => {
-    przycisk.classList.toggle('aktywny');
-    menu.classList.toggle('aktywny');
-  });
-})();
 
 (() => {
   const container = document.querySelector('.final-image .heart-layer');
