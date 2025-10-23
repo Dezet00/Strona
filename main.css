@@ -1,0 +1,302 @@
+.Main{
+  padding-top: 30px;
+}
+.mainnew {
+  width: 100%;
+  padding: 70px 0px;
+  padding-bottom: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.mainnew-container {
+  max-width: 1650px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.mainnew-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 98%;
+}
+
+/* --- BOX STYL --- */
+.mainnew-box {
+  background: rgb(255, 253, 253);
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(139, 92, 246, 0.15);
+  padding: 30px;
+  text-align: left;              
+  flex: 1;
+  min-width: 300px;
+  max-width: 540px;
+  display: flex;                
+  flex-direction: column;
+  align-items: flex-start;       
+}
+
+.mainnew-box.wide {
+  flex: 1 1 45%;
+  max-width: none;
+}
+.mainnew-box svg {
+  margin-bottom: 15px;
+  width: 50px;
+  height: 50px;
+  align-self: flex-start;        
+}
+
+.mainnew-box h3 {
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 10px;
+  text-align: left;              
+}
+
+.mainnew-box p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;              
+}
+
+/* --- RESPONSYWNOŚĆ --- */
+@media (max-width: 1024px) {
+  .mainnew-box.wide {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainnew-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainnew-box {
+    max-width: 90%;
+  }
+}
+@media (max-width: 1024px) {
+  .mainnew-box.wide {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainnew-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainnew-box {
+    max-width: 90%;
+  }
+
+  .mainnew-box.wide {
+    flex: 1 1 0%;
+    max-width: 90%;
+  }
+  .mainnew{padding: 20px 0px; padding-bottom: 50px;}
+}
+
+
+/* Sekcja New */
+.new {
+  width: 100%;
+  padding-bottom: 80px;
+
+}
+
+.newcontainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
+}
+
+.newbox {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(139, 92, 246, 0.10);
+  overflow: hidden;
+  flex: 0 1 350px;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+.newbox:hover {
+   box-shadow: 0 5px 10px rgba(139, 92, 246, 0.25);
+
+}
+.newbox-top {
+  flex: 1 1 50%;
+  overflow: hidden;
+}
+
+.newbox-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dolna część (tekst) */
+.newbox-bottom {
+  flex: 1 1 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newtitle {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.newtext {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* 🔹 Zakładka "Nowość" — pojawia się tylko na pierwszym boxie */
+.newbox:first-child::before,
+.newbox.is-new::before {
+  content: "Nowość";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #7a42ff; /* fioletowy */
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .newcontainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .newbox {
+    flex: 0 0 80%; 
+    aspect-ratio: 3 / 4;
+  }
+
+  .newcontainer::-webkit-scrollbar {
+    display: none;
+  }
+  .newcontainer {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    padding-bottom: 20px;
+  }
+}
+
+
+
+
+.newsletter-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 25px 15px;
+  margin-top: 20px;
+}
+
+.newsletter-container {
+  max-width: 1550px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap; 
+  flex-direction: row; /
+}
+
+.newsletter-left {
+  max-width: 480px;
+}
+
+.newsletter-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px; 
+}
+
+.newsletter-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.newsletter-left h3 {
+  font-weight: bold;
+  margin-bottom: 6px; 
+  font-size: 1rem;
+  color:white
+}
+
+.newsletter-left p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+  color:white; 
+}
+
+.newsletter-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 0; 
+}
+
+.newsletter-right a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.newsletter-right a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .newsletter-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .newsletter-right {
+    margin-top: 10px; 
+  }
+}
+
+
